@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
         color: 'gray',
         fontSize: 13,
         marginLeft: 20,
-        marginTop: 7.5,
-        marginBottom: 7.5,
+        marginTop: 10,
+        marginBottom: 10,
     },
     genreButtons: {
         flexDirection: 'row',

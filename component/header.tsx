@@ -20,12 +20,12 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   header: {
-    flexDirection: "row",           // Layout children in a row
-    justifyContent: "space-between", // Space left/right items
-    alignItems: "center",           // Vertically center everything
-    backgroundColor: "blue",
-    paddingHorizontal: 10,          // Add horizontal padding
-    height: 80,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#242ba1",
+    paddingHorizontal: 10,
+    height: 60,
   },
   title: {
     color: "white",

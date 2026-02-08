@@ -5,21 +5,38 @@ import Header from "../component/header";
 import MainContent from "@/component/mainContent";
 import Footer from "@/component/footer";
 import MangaDetails from "@/component/mangaDetails";
-
 export default function Index() {
   return (
-    <SafeAreaView style={styles.body}>
-      <Header/>
-      <MangaDetails/>
-      <MainContent/>
-      <Footer/>
-    </SafeAreaView>
+    <View style={styles.body}>
+      {/* Only the top safe area + header */}
+      <SafeAreaView style={styles.headerSafeArea} edges={['top']}>
+        <Header />
+      </SafeAreaView>
+
+      {/* Rest of the screen */}
+      <View style={styles.body}>
+        <MangaDetails />
+        <MainContent />
+      </View>
+
+      <SafeAreaView style={styles.footerSafeArea} edges={['bottom']}>
+        <Footer />
+      </SafeAreaView>
+
+    </View>
   );
 }
 
 const styles = StyleSheet.create(
   {
+    headerSafeArea: {
+      backgroundColor: '#242ba1',
+    },
+    footerSafeArea: {
+      backgroundColor: 'white',
+    },
     body: {
+      flex: 1,
       backgroundColor: 'white',
       width: '100%',
       height: '100%',

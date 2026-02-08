@@ -34,7 +34,7 @@ export default function MainContent() {
             <Text style={styles.chapterTitle}>{item.title}</Text>
 
             <View style={styles.commentCounter}>
-              <Ionicons name="chatbubble" size={18} color="black" />
+              <Ionicons name="chatbubble" size={18} color="darkgrey" />
               <Text style={styles.commentCount}>{item.comments}</Text>
             </View>
         </View>
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 15,
     paddingRight: 20,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'white',
     borderRadius: 8,
     borderColor: 'Black',
     borderWidth: 0.3,
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   commentCount: {
     marginLeft: 3,
-    color: 'black',
+    color: 'darkgrey',
     fontWeight: 'bold',
   },
 });
