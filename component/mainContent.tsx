@@ -8,15 +8,16 @@ type Chapter = {
   id: string;
   number: number;
   title: string;
+  comments: number;
 };
 
 // Sample chapter data
 const chapters: Chapter[] = [
-    { id: '1', number: 1, title: 'CHAPTER 110 AN ACT OF' },
-    { id: '2', number: 2, title: 'CHAPTER 111 FALSE FACE' },
-    { id: '3', number: 3, title: 'CHAPTER 112 UNBOXING' },
-    { id: '4', number: 4, title: 'CHAPTER 113 A VAUGE IDENTITY' },
-    { id: '5', number: 5, title: "CHAPTER 114 FLAILIN'" },
+    { id: '1', number: 1, title: 'CHAPTER 110 AN ACT OF                ****', comments: 85},
+    { id: '2', number: 2, title: 'CHAPTER 111 FALSE FACE', comments: 33},
+    { id: '3', number: 3, title: 'CHAPTER 112 UNBOXING', comments: 25},
+    { id: '4', number: 4, title: 'CHAPTER 113 A VAUGE IDENTITY', comments: 38},
+    { id: '5', number: 5, title: "CHAPTER 114 FLAILIN'", comments: 52},
 ];
 
 export default function MainContent() {
@@ -27,10 +28,15 @@ export default function MainContent() {
       onPress={() => console.log('Pressed chapter', item.number)}
       activeOpacity={0.7}
     >
-        <Fontisto name="checkbox-passive" size={30} color="black" />
+        <Fontisto name="checkbox-passive" size={60} color="black" />
 
         <View style={styles.chapterInfo}>
             <Text style={styles.chapterTitle}>{item.title}</Text>
+
+            <View style={styles.commentCounter}>
+              <Ionicons name="chatbubble" size={18} color="black" />
+              <Text style={styles.commentCount}>{item.comments}</Text>
+            </View>
         </View>
 
         <MaterialCommunityIcons name="ticket-outline" size={24} color="black" />
@@ -51,13 +57,13 @@ export default function MainContent() {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    padding: 10,
   },
   chapterRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 30,
-    marginVertical: 0,
+    padding: 10,
+    paddingLeft: 15,
+    paddingRight: 20,
     backgroundColor: '#f0f0f0',
     borderRadius: 8,
     borderColor: 'Black',
@@ -79,6 +85,16 @@ const styles = StyleSheet.create({
   chapterTitle: {
     fontSize: 14,
     color: '#161616',
+    fontWeight: 'bold',
+  },
+  commentCounter: {
+    marginTop: 30,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  commentCount: {
+    marginLeft: 3,
+    color: 'black',
     fontWeight: 'bold',
   },
 });

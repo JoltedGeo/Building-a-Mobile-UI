@@ -4,10 +4,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../component/header";
 import MainContent from "@/component/mainContent";
 import Footer from "@/component/footer";
+import MangaDetails from "@/component/mangaDetails";
+
 export default function Index() {
   return (
     <SafeAreaView style={styles.body}>
       <Header/>
+      <MangaDetails/>
       <MainContent/>
       <Footer/>
     </SafeAreaView>
